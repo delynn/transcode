@@ -89,10 +89,10 @@ module Transcode
       $redis.del("#{@id}:blocks")
 
       # Remove all titles
-      $redis.del(titles)
+      $redis.del(titles) if titles.size > 0
 
       # Remove all blocks
-      $redis.del(blocks)
+      $redis.del(blocks) if blocks.size > 0
 
       $redis.exec
 
