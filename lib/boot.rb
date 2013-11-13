@@ -9,7 +9,6 @@ require 'fileutils'
 require 'shellwords'
 require 'logger'
 require 'digest/sha1'
-require 'iconv'
 require 'tempfile'
 
 require 'json'
