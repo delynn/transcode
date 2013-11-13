@@ -1,11 +1,13 @@
 source 'https://rubygems.org'
-gem "sinatra"
-gem "resque"
+
+gem 'rake'
+gem 'sinatra'
+gem 'resque'
 gem 'foreman'
 gem 'thin'
-gem 'fssm', '0.2.8.1'
+gem 'fssm', '0.2.10'
 gem 'mustache'
-gem 'redis', '3.0.1'
+gem 'redis', '3.0.6'
 gem 'json'
 gem 'sprockets'
 gem 'coffee-script'
