@@ -1,7 +1,6 @@
 # encoding: UTF-8
 module Transcode
   class Watch
-    
     def start
       FSSM.monitor(Transcode.config.rips, '*', :directories => true) do |path|
         path.create do |base, name, type|
@@ -13,19 +12,18 @@ module Transcode
         path.delete {|base, name, type|}
       end
     end
-    
+
     def is_movie_candidate?(name, type)
-      
+
       if name.include?('.ripit')
         return false
       end
-      
+
       if 'file' === type.to_s
         return false
       end
-      
+
       true
     end
-    
   end
 end

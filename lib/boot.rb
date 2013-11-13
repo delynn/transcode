@@ -40,4 +40,4 @@ Pusher.secret = Transcode.config.pusher_secret
 
 include FileUtils
 
-$redis = Redis.connect(:url => 'redis://127.0.0.1', :thread_safe => true)
+$redis = Redis.connect(url: 'redis://127.0.0.1', thread_safe: true)
