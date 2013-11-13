@@ -21,7 +21,6 @@ module Transcode
       Transcode.log.info("Queued #{name} for scan")
       Resque.enqueue(ScanJob, base, name)
     end
-
   end
 
   class ConvertJob
