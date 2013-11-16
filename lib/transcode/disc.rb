@@ -57,7 +57,7 @@ module Transcode
       $redis.sadd('transcode:discs', @id)
 
       # Add disc hash
-      $redis.mapped_hmset(@id, { 'id' => @id, 'name' => @name, 'path' => @path })
+      $redis.mapped_hmset(@id, { id: @id, name: @name, path: @path })
 
       # Add title set and hashes
       @titles.each do |title|
