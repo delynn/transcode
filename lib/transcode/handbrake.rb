@@ -13,7 +13,6 @@ module Transcode
       ports = $redis.hgetall('transcode:progress:port')
 
       # Do the conversion and send progress to progress server
-      Transcode.log.info("Command: #{base} 2>&1 | nc #{ports['ip']} #{ports['port']}")
       `#{base} 2>&1 | nc #{ports['ip']} #{ports['port']}`
 
       # Nothing is transcoding now
@@ -24,7 +23,7 @@ module Transcode
     end
 
     def self.scan(path)
-      utf8_clean(`HandBrakeCLI -i #{Shellwords.escape(path)} -t 0 2>&1`)
+      utf8_clean(`#{Transcode.config.handbrake} -i #{Shellwords.escape(path)} -t 0 2>&1`)
     end
 
     def self.utf8_clean(data)
