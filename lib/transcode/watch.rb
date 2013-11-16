@@ -14,16 +14,7 @@ module Transcode
     end
 
     def is_movie_candidate?(name, type)
-
-      if name.include?('.ripit')
-        return false
-      end
-
-      if 'file' === type.to_s
-        return false
-      end
-
-      true
+      type.to_s === 'file' && name.end_with?('.ripit') == false
     end
   end
 end
