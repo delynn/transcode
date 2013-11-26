@@ -27,9 +27,9 @@ module Transcode
     end
 
     def self.utf8_clean(data)
-      # ic = Iconv.new('UTF-8//IGNORE', 'UTF-8')
-      # ic.iconv(data + ' ')[0..-2]
-      data.encode('UTF-8', invalid: :replace, undef: :replace, replace: '').force_encoding('UTF-8')
+      data.encode('UTF-16', invalid: :replace, undef: :replace, replace: '').
+           encode('UTF-8').
+           force_encoding('UTF-8')
     end
   end
 end
