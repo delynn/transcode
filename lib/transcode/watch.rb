@@ -2,7 +2,7 @@
 module Transcode
   class Watch
     def start
-      FSSM.monitor(Transcode.config.rips, '*', :directories => true) do |path|
+      FSSM.monitor(Transcode.config.rips, '*', directories: true) do |path|
         path.create do |base, name, type|
           if is_movie_candidate?(name, type)
             Jobs.enqueue_scan(base, name)
